@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light only">
+    <meta name="supported-color-schemes" content="light">
+    
     <link rel="icon" href="favicon.png" type="image/png">
     <title>A Casa Di Gina</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -75,7 +78,7 @@
                 </div>
 
                 <div class="showcase-card">
-                    <div class="showcase-img-wrap"><img src="luoghi/martina_franca.jpg" class="zoomable-img" alt="Martina Franca" onerror="this.style.display='none'"></div>
+                    <div class="showcase-img-wrap"><img src="luoghi/martina.jpg" class="zoomable-img" alt="Martina Franca" onerror="this.style.display='none'"></div>
                     <div class="showcase-content">
                         <h2>Martina Franca</h2>
                         <p>Nota per l'architettura barocca e il festival musicale. Sorge sulle colline della Murgia in una posizione che offre splendide vedute sulla Valle d'Itria.</p>
@@ -131,7 +134,7 @@
                 </div>
 
                 <div class="showcase-card">
-                    <div class="showcase-img-wrap"><img src="luoghi/san_giovanni_rotondo.jpg" class="zoomable-img" alt="San Giovanni Rotondo" onerror="this.style.display='none'"></div>
+                    <div class="showcase-img-wrap"><img src="luoghi/sangiovanni.jpg" class="zoomable-img" alt="San Giovanni Rotondo" onerror="this.style.display='none'"></div>
                     <div class="showcase-content">
                         <h2>San Giovanni Rotondo</h2>
                         <p>Luogo di profondo culto cattolico che ospita il celebre Santuario di Padre Pio, meta di pellegrinaggi circondato dal verde del promontorio del Gargano.</p>
@@ -160,7 +163,6 @@
             navList.classList.toggle('active');
         });
 
-        // Chiude il menu mobile quando si clicca un link
         const navLinks = document.querySelectorAll('#nav-list a');
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
@@ -169,7 +171,6 @@
             });
         });
 
-        // Funzionalità Lightbox (Zoom Foto) SUPER STABILE PER MOBILE
         const modal = document.getElementById("imageModal");
         const modalImg = document.getElementById("lightboxImage");
         const closeBtn = document.getElementById("lightboxClose");
