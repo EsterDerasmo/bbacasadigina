@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light only">
+    <link rel="icon" href="favicon.png" type="image/png">
     <title>A Casa Di Gina</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,23 +44,67 @@
         </div>
     </div>
     <div class="gallery-grid">
-    <div class="grid-item"><img src="camera_ester/anticamera.jpg" alt="anticamera.jpg" loading="lazy"></div>
-    <div class="grid-item"><img src="camera_ester/bagno.jpg" alt="bagno.jpg" loading="lazy"></div>
-    <div class="grid-item"><img src="camera_ester/corridoio.jpg" alt="corridoio.jpg" loading="lazy"></div>
-    <div class="grid-item"><img src="camera_ester/letto.jpg" alt="letto.jpg" loading="lazy"></div>
-    <div class="grid-item"><img src="camera_ester/quadro.jpg" alt="quadro.jpg" loading="lazy"></div>
-    <div class="grid-item"><img src="camera_ester/specchio.jpg" alt="specchio.jpg" loading="lazy"></div>
+    <div class="grid-item"><img src="camera_ester/anticamera.jpg" alt="anticamera.jpg" loading="lazy" class="zoomable-img"></div>
+    <div class="grid-item"><img src="camera_ester/bagno.jpg" alt="bagno.jpg" loading="lazy" class="zoomable-img"></div>
+    <div class="grid-item"><img src="camera_ester/corridoio.jpg" alt="corridoio.jpg" loading="lazy" class="zoomable-img"></div>
+    <div class="grid-item"><img src="camera_ester/letto.jpg" alt="letto.jpg" loading="lazy" class="zoomable-img"></div>
+    <div class="grid-item"><img src="camera_ester/quadro.jpg" alt="quadro.jpg" loading="lazy" class="zoomable-img"></div>
+    <div class="grid-item"><img src="camera_ester/specchio.jpg" alt="specchio.jpg" loading="lazy" class="zoomable-img"></div>
 </div>
     </main>
     <footer>
         <p>© 2026 by A casa di gina. Proudly custom built.</p>
     </footer>
+
+    <div id="imageModal" class="lightbox-modal">
+        <span class="lightbox-close" id="lightboxClose">×</span>
+        <img class="lightbox-content" id="lightboxImage">
+    </div>
+
     <script>
         const hamburger = document.getElementById('hamburger-menu');
         const navList = document.getElementById('nav-list');
         hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('active');
             navList.classList.toggle('active');
+        });
+
+        const navLinks = document.querySelectorAll('#nav-list a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navList.classList.remove('active');
+            });
+        });
+
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("lightboxImage");
+        const closeBtn = document.getElementById("lightboxClose");
+        
+        const zoomableImages = document.querySelectorAll(".zoomable-img");
+        zoomableImages.forEach(img => {
+            img.addEventListener("click", function() {
+                modal.style.display = "flex";
+                modalImg.src = this.src;
+            });
+        });
+
+        function closeModal() {
+            modal.style.display = "none";
+        }
+        
+        if(closeBtn) closeBtn.addEventListener("click", closeModal);
+        
+        window.addEventListener("click", function(event) {
+            if (event.target == modal) {
+                closeModal();
+            }
+        });
+        
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape" && modal.style.display === "flex") {
+                closeModal();
+            }
         });
     </script>
 </body>

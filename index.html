@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light only">
+    <link rel="icon" href="favicon.png" type="image/png">
     <title>A Casa Di Gina</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,7 +52,7 @@
         slideIndex++;
         if (slideIndex > slides.length) {slideIndex = 1}    
         slides[slideIndex-1].style.display = "block";  
-        setTimeout(showSlides, 4000); // Cambia immagine ogni 4 secondi
+        setTimeout(showSlides, 4000); 
     }
     document.addEventListener("DOMContentLoaded", showSlides);
     </script>
@@ -62,29 +64,73 @@
         <p class="testo-corsivo" style="text-align: center; max-width: 800px; margin: 0 auto;">A pochi chilometri lo spettacolo naturale incredibile delle grotte di Castellana e l'affascinante scenario dei trulli di Alberobello, Ostuni "la città bianca", la valle d'Itria e poco più distanti tante altre meraviglie che la Puglia offre ai suoi visitatori.</p>
     </div>
     <div class="gallery-grid">
-    <div class="grid-item"><img src="bb/biliardo.jpg" alt="biliardo.jpg" loading="lazy"></div>
-    <div class="grid-item"><img src="bb/colazione.jpg" alt="colazione.jpg" loading="lazy"></div>
-    <div class="grid-item"><img src="bb/colazione2.jpg" alt="colazione2.jpg" loading="lazy"></div>
-    <div class="grid-item"><img src="bb/cucina.jpg" alt="cucina.jpg" loading="lazy"></div>
-    <div class="grid-item"><img src="bb/esterno.jpg" alt="esterno.jpg" loading="lazy"></div>
-    <div class="grid-item"><img src="bb/esterno2.jpg" alt="esterno2.jpg" loading="lazy"></div>
-    <div class="grid-item"><img src="bb/esterno3.jpg" alt="esterno3.jpg" loading="lazy"></div>
-    <div class="grid-item"><img src="bb/piscina.jpg" alt="piscina.jpg" loading="lazy"></div>
-    <div class="grid-item"><img src="bb/piscina2.jpg" alt="piscina2.jpg" loading="lazy"></div>
-    <div class="grid-item"><img src="bb/piscina3.jpg" alt="piscina3.jpg" loading="lazy"></div>
-    <div class="grid-item"><img src="bb/salone.jpg" alt="salone.jpg" loading="lazy"></div>
-    <div class="grid-item"><img src="bb/veranda.jpg" alt="veranda.jpg" loading="lazy"></div>
+    <div class="grid-item"><img src="bb/biliardo.jpg" alt="biliardo.jpg" loading="lazy" class="zoomable-img"></div>
+    <div class="grid-item"><img src="bb/colazione.jpg" alt="colazione.jpg" loading="lazy" class="zoomable-img"></div>
+    <div class="grid-item"><img src="bb/colazione2.jpg" alt="colazione2.jpg" loading="lazy" class="zoomable-img"></div>
+    <div class="grid-item"><img src="bb/cucina.jpg" alt="cucina.jpg" loading="lazy" class="zoomable-img"></div>
+    <div class="grid-item"><img src="bb/esterno.jpg" alt="esterno.jpg" loading="lazy" class="zoomable-img"></div>
+    <div class="grid-item"><img src="bb/esterno2.jpg" alt="esterno2.jpg" loading="lazy" class="zoomable-img"></div>
+    <div class="grid-item"><img src="bb/esterno3.jpg" alt="esterno3.jpg" loading="lazy" class="zoomable-img"></div>
+    <div class="grid-item"><img src="bb/piscina.jpg" alt="piscina.jpg" loading="lazy" class="zoomable-img"></div>
+    <div class="grid-item"><img src="bb/piscina2.jpg" alt="piscina2.jpg" loading="lazy" class="zoomable-img"></div>
+    <div class="grid-item"><img src="bb/piscina3.jpg" alt="piscina3.jpg" loading="lazy" class="zoomable-img"></div>
+    <div class="grid-item"><img src="bb/salone.jpg" alt="salone.jpg" loading="lazy" class="zoomable-img"></div>
+    <div class="grid-item"><img src="bb/veranda.jpg" alt="veranda.jpg" loading="lazy" class="zoomable-img"></div>
 </div>
     </main>
     <footer>
         <p>© 2026 by A casa di gina. Proudly custom built.</p>
     </footer>
+
+    <div id="imageModal" class="lightbox-modal">
+        <span class="lightbox-close" id="lightboxClose">×</span>
+        <img class="lightbox-content" id="lightboxImage">
+    </div>
+
     <script>
         const hamburger = document.getElementById('hamburger-menu');
         const navList = document.getElementById('nav-list');
         hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('active');
             navList.classList.toggle('active');
+        });
+
+        const navLinks = document.querySelectorAll('#nav-list a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navList.classList.remove('active');
+            });
+        });
+
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("lightboxImage");
+        const closeBtn = document.getElementById("lightboxClose");
+        
+        const zoomableImages = document.querySelectorAll(".zoomable-img");
+        zoomableImages.forEach(img => {
+            img.addEventListener("click", function() {
+                modal.style.display = "flex";
+                modalImg.src = this.src;
+            });
+        });
+
+        function closeModal() {
+            modal.style.display = "none";
+        }
+        
+        if(closeBtn) closeBtn.addEventListener("click", closeModal);
+        
+        window.addEventListener("click", function(event) {
+            if (event.target == modal) {
+                closeModal();
+            }
+        });
+        
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape" && modal.style.display === "flex") {
+                closeModal();
+            }
         });
     </script>
 </body>

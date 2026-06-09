@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light only">
+    <link rel="icon" href="favicon.png" type="image/png">
     <title>A Casa Di Gina</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -77,19 +79,63 @@
         </div>
     </div>
     <div class="map-container">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7144.261279157006!2d17.184402546567636!3d40.932782734818936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1347b70a51836bed%3A0x5bcf35d3683f579d!2sB%26B%20A%20Casa%20di%20Gina!5e1!3m2!1sit!2sit!4v1780582412337!5m2!1sit!2sit" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12040.672323382747!2d17.1895697!3d40.967912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1347b6b1b1b1b1b1%3A0x1b1b1b1b1b1b1b1b!2sPolignano%20a%20Mare!5e0!3m2!1sit!2sit!4v1620000000000!5m2!1sit!2sit" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </div>
     
     </main>
     <footer>
         <p>© 2026 by A casa di gina. Proudly custom built.</p>
     </footer>
+
+    <div id="imageModal" class="lightbox-modal">
+        <span class="lightbox-close" id="lightboxClose">×</span>
+        <img class="lightbox-content" id="lightboxImage">
+    </div>
+
     <script>
         const hamburger = document.getElementById('hamburger-menu');
         const navList = document.getElementById('nav-list');
         hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('active');
             navList.classList.toggle('active');
+        });
+
+        const navLinks = document.querySelectorAll('#nav-list a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navList.classList.remove('active');
+            });
+        });
+
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("lightboxImage");
+        const closeBtn = document.getElementById("lightboxClose");
+        
+        const zoomableImages = document.querySelectorAll(".zoomable-img");
+        zoomableImages.forEach(img => {
+            img.addEventListener("click", function() {
+                modal.style.display = "flex";
+                modalImg.src = this.src;
+            });
+        });
+
+        function closeModal() {
+            modal.style.display = "none";
+        }
+        
+        if(closeBtn) closeBtn.addEventListener("click", closeModal);
+        
+        window.addEventListener("click", function(event) {
+            if (event.target == modal) {
+                closeModal();
+            }
+        });
+        
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape" && modal.style.display === "flex") {
+                closeModal();
+            }
         });
     </script>
 </body>
