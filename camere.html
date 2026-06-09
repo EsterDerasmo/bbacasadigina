@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Casa Di Gina</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Jost:wght@300;400;500&family=Nunito:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">A casa di Gina</a>
+            <button class="hamburger" id="hamburger-menu" aria-label="Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <nav>
+                <ul id="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="bb.html">Il Bed and Breakfast</a></li>
+                    <li><a href="camera-ester.html">La camera di Ester</a></li>
+                    <li><a href="camera-ragazze.html">La camera delle ragazze</a></li>
+                    <li><a href="cosa-vedere.html">Cosa vedere</a></li>
+                    <li><a href="come-raggiungerci.html">Come raggiungerci</a></li>
+                    <li><a href="contatti.html">Contatti</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+
+    <div class="split-layout">
+        <div class="split-left">
+            <h1>Le Camere</h1>
+        </div>
+        <div class="split-right">
+            <h2 class="titolo-paragrafo">LA CAMERA DI ESTER</h2>
+            <p class="testo-corsivo">È una camera con letto matrimoniale con bagno e un'anticamera dove può essere aggiunto un letto singolo. Dotata di tv e aria condizionata. Gli arredi della camera appartenevano alla nonna Ester.</p>
+            <div class="gallery-grid">
+    <div class="grid-item"><img src="camera_ester/anticamera.jpg" alt="anticamera.jpg"></div>
+    <div class="grid-item"><img src="camera_ester/bagno.jpg" alt="bagno.jpg"></div>
+    <div class="grid-item"><img src="camera_ester/corridoio.jpg" alt="corridoio.jpg"></div>
+    <div class="grid-item"><img src="camera_ester/letto.jpg" alt="letto.jpg"></div>
+    <div class="grid-item"><img src="camera_ester/quadro.jpg" alt="quadro.jpg"></div>
+    <div class="grid-item"><img src="camera_ester/specchio.jpg" alt="specchio.jpg"></div>
+</div>
+            
+            <h2 class="titolo-paragrafo" style="margin-top: 60px;">LA CAMERA DELLE RAGAZZE</h2>
+            <p class="testo-corsivo">Accogliente e luminosa, perfetta per rilassarsi dopo una lunga giornata di visite ed escursioni nella magnifica terra di Puglia. Dotata di ogni comfort per farvi sentire a casa.</p>
+            <div class="gallery-grid">
+    <div class="grid-item"><img src="camera_ragazze/bagno.jpg" alt="bagno.jpg"></div>
+    <div class="grid-item"><img src="camera_ragazze/letto.jpg" alt="letto.jpg"></div>
+    <div class="grid-item"><img src="camera_ragazze/letto2.jpg" alt="letto2.jpg"></div>
+    <div class="grid-item"><img src="camera_ragazze/quadro.jpg" alt="quadro.jpg"></div>
+    <div class="grid-item"><img src="camera_ragazze/specchio.jpg" alt="specchio.jpg"></div>
+</div>
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <p>© 2026 by A casa di gina. Proudly custom built.</p>
+    </footer>
+    <script>
+        const hamburger = document.getElementById('hamburger-menu');
+        const navList = document.getElementById('nav-list');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navList.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Casa Di Gina</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Jost:wght@300;400;500&family=Nunito:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">A casa di Gina</a>
+            <button class="hamburger" id="hamburger-menu" aria-label="Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <nav>
+                <ul id="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="bb.html" class="active">Il Bed and Breakfast</a></li>
+                    <li><a href="camera-ester.html">La camera di Ester</a></li>
+                    <li><a href="camera-ragazze.html">La camera delle ragazze</a></li>
+                    <li><a href="cosa-vedere.html">Cosa vedere</a></li>
+                    <li><a href="come-raggiungerci.html">Come raggiungerci</a></li>
+                    <li><a href="contatti.html">Contatti</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+
+    <div class="split-layout">
+        <div class="split-left">
+            <h1>I nostri servizi</h1>
+        </div>
+        <div class="split-right">
+            <p class="testo-corsivo">Il nostro b&b fornisce ai propri ospiti i seguenti servizi:<br><br>
+            Colazione in giardino o nel nostro luminoso soggiorno.<br>
+            Spogliatoio con due docce calde.<br>
+            Biliardo.<br>
+            Vasca idromassaggio in giardino.<br>
+            Connessione internet.<br>
+            Ampio giardino.<br>
+            Cucina condivisa.<br>
+            Stenditoio.<br>
+            Parcheggio.</p>
+        </div>
+    </div>
+    <div class="gallery-grid">
+    <div class="grid-item"><img src="bb/biliardo.jpg" alt="biliardo.jpg" loading="lazy"></div>
+    <div class="grid-item"><img src="bb/colazione.jpg" alt="colazione.jpg" loading="lazy"></div>
+    <div class="grid-item"><img src="bb/colazione2.jpg" alt="colazione2.jpg" loading="lazy"></div>
+    <div class="grid-item"><img src="bb/cucina.jpg" alt="cucina.jpg" loading="lazy"></div>
+    <div class="grid-item"><img src="bb/esterno.jpg" alt="esterno.jpg" loading="lazy"></div>
+    <div class="grid-item"><img src="bb/esterno2.jpg" alt="esterno2.jpg" loading="lazy"></div>
+    <div class="grid-item"><img src="bb/esterno3.jpg" alt="esterno3.jpg" loading="lazy"></div>
+    <div class="grid-item"><img src="bb/piscina.jpg" alt="piscina.jpg" loading="lazy"></div>
+    <div class="grid-item"><img src="bb/piscina2.jpg" alt="piscina2.jpg" loading="lazy"></div>
+    <div class="grid-item"><img src="bb/piscina3.jpg" alt="piscina3.jpg" loading="lazy"></div>
+    <div class="grid-item"><img src="bb/salone.jpg" alt="salone.jpg" loading="lazy"></div>
+    <div class="grid-item"><img src="bb/veranda.jpg" alt="veranda.jpg" loading="lazy"></div>
+</div>
+    </main>
+    <footer>
+        <p>© 2026 by A casa di gina. Proudly custom built.</p>
+    </footer>
+    <script>
+        const hamburger = document.getElementById('hamburger-menu');
+        const navList = document.getElementById('nav-list');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navList.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

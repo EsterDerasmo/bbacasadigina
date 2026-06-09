@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Casa Di Gina</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Jost:wght@300;400;500&family=Nunito:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">A casa di Gina</a>
+            <button class="hamburger" id="hamburger-menu" aria-label="Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <nav>
+                <ul id="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="bb.html">Il Bed and Breakfast</a></li>
+                    <li><a href="camera-ester.html">La camera di Ester</a></li>
+                    <li><a href="camera-ragazze.html">La camera delle ragazze</a></li>
+                    <li><a href="cosa-vedere.html">Cosa vedere</a></li>
+                    <li><a href="come-raggiungerci.html">Come raggiungerci</a></li>
+                    <li><a href="contatti.html" class="active">Contatti</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+
+    <div class="contact-wrapper">
+        <h1 style="text-align: center;">Contatti</h1>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>
+                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    Indirizzo
+                </h3>
+                <p class="testo-corsivo" style="font-size: 20px; margin-bottom: 40px; margin-left: 34px;">Strada Comunale Parco Balistris, 1177d.<br>70044 Polignano a mare BA</p>
+                
+                <h3>
+                    <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    Email
+                </h3>
+                <p class="testo-corsivo" style="font-size: 20px; margin-left: 34px;">esterderasmo@gmail.com</p>
+            </div>
+            
+            <div class="contact-form">
+                <form action="https://formsubmit.co/esterderasmo@gmail.com" method="POST">
+                    <input type="hidden" name="_captcha" value="false">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>First Name</label>
+                            <input type="text" name="Nome" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name</label>
+                            <input type="text" name="Cognome" required>
+                        </div>
+                    </div>
+                    <div class="form-group" style="margin-bottom: 25px;">
+                        <label>Email *</label>
+                        <input type="email" name="Email_Cliente" required>
+                    </div>
+                    <div class="form-group" style="margin-bottom: 25px;">
+                        <label>Message</label>
+                        <textarea rows="5" name="Messaggio" required></textarea>
+                    </div>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7144.261279157006!2d17.184402546567636!3d40.932782734818936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1347b70a51836bed%3A0x5bcf35d3683f579d!2sB%26B%20A%20Casa%20di%20Gina!5e1!3m2!1sit!2sit!4v1780582412337!5m2!1sit!2sit" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+    
+    </main>
+    <footer>
+        <p>© 2026 by A casa di gina. Proudly custom built.</p>
+    </footer>
+    <script>
+        const hamburger = document.getElementById('hamburger-menu');
+        const navList = document.getElementById('nav-list');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navList.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
