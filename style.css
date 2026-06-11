@@ -40,6 +40,31 @@ nav ul li a:hover, nav ul li a.active { color: var(--text-dark) !important; font
 .home-container { text-align: center; max-width: 1000px; margin: 60px auto; padding: 0 5%; }
 .home-container h1 { font-family: var(--font-titoli); font-size: 48px; font-weight: 400; margin-bottom: 10px; color: var(--text-dark) !important;}
 
+/* PULSANTE PRENOTA ORA */
+.btn-prenota { 
+    background-color: #ffffff; /* Verde elegante della struttura */
+    color: #000000 !important; 
+    padding: 15px 40px; 
+    font-size: 16px; 
+    font-family: var(--font-corsivo);
+    font-weight: bold; 
+    text-transform: uppercase; 
+    text-decoration: none; /* Toglie la sottolineatura del link */
+    border-radius: 5px; 
+    transition: 0.3s; 
+    display: block;         /* Necessario per centrare */
+    width: max-content;     /* Si adatta al testo */
+    margin: 10px auto 60px; /* Lo centra orizzontalmente (auto) e dà spazio sotto */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15); 
+}
+
+.btn-prenota:hover { 
+    background-color: #5d6b48;
+    color: #ffffff !important; 
+    transform: translateY(-3px); 
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
 /* COSA VEDERE - VETRINA LOCALE */
 .showcase-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; margin-top: 0; }
 .showcase-card { background: #fff !important; border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-soft); display: flex; flex-direction: column; transition: transform 0.4s ease; }
