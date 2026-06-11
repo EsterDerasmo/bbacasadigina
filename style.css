@@ -8,7 +8,32 @@
     --shadow-soft: 0 8px 30px rgba(0,0,0,0.08);
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html, body { font-family: var(--font-testi); color: var(--text-dark) !important; background-color: var(--bg-color) !important; line-height: 1.8; overflow-x: hidden; }
+html, body { font-family: var(--font-testi); color: var(--text-dark) !important; background-color: var(--bg-color) !important; line-height: 1.8; overflow-x: hidden;
+    background-image: url('logo-gina-sfondo.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: 300px; }
+
+    @media (min-width: 768px) {
+    body {
+        background-size: 600px; /* Più grande per sfruttare lo spazio del monitor del PC */
+    }
+}
+
+.logo img {
+    height: 50px; 
+    width: auto;
+    vertical-align: middle;
+    transition: height 0.3s ease; /* Rende il cambio di dimensione fluido */
+}
+
+/* Misura per PC e TABLET: lo schermo è grande, quindi lo ingrandiamo */
+@media (min-width: 768px) {
+    .logo img {
+        height: 300px; /* Puoi alzare questo valore se vuoi vederlo ancora più grande su PC */
+    }
+}
 
 /* HEADER EDITORIALE */
 header { width: 100%; background: #ffffff !important; padding: 40px 5% 20px; text-align: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 1px 5px rgba(0,0,0,0.02);}
